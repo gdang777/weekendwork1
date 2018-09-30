@@ -9,6 +9,12 @@ var options = {
 };
 var callback = function(response){
     console.log("In response handler call back");
+
+    response.on('data' , function(chunk){
+        console.log('[--CHUNK OF LENGTH ' + chunk.length + ' --]');
+        console.log(chunk.toString());
+    });
+    
     console.log("'response : " , response)
 
 }
